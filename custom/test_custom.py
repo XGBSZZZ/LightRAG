@@ -30,8 +30,11 @@ rag = LightRAG(
 with open("simplified_chinese.txt", "r", encoding="utf-8") as f:
     rag.insert(f.read())
 
-# Perform naive search
-print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="naive")))
-print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="local")))
-print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="global")))
-print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="hybrid")))
+# 使用不同的检索模式进行查询
+modes = ["naive", "local", "global", "hybrid"]
+query = "告诉我有关考勤的规定"
+
+for mode in modes:
+    print(f"\n使用{mode}模式的查询结果:")
+    result = rag.query(query, param=QueryParam(mode=mode))
+    print(result)
