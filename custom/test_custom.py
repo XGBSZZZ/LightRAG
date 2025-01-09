@@ -4,7 +4,7 @@ from lightrag import LightRAG, QueryParam
 from lightrag.llm import ollama_model_complete, ollama_embedding
 from lightrag.utils import EmbeddingFunc
 
-WORKING_DIR = "./dickens"
+WORKING_DIR = "../dickens"
 
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
@@ -27,7 +27,7 @@ rag = LightRAG(
     ),
 )
 
-with open("./simplified_chinese.txt", "r", encoding="utf-8") as f:
+with open("simplified_chinese.txt", "r", encoding="utf-8") as f:
     rag.insert(f.read())
 
 # Perform naive search
