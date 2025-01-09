@@ -4,7 +4,7 @@ from lightrag import LightRAG, QueryParam
 from lightrag.llm import ollama_model_complete, ollama_embedding
 from lightrag.utils import EmbeddingFunc
 
-WORKING_DIR = "../dickens"
+WORKING_DIR = "dickens"
 
 logging.basicConfig(format="%(levelname)s:%(message)s", level=logging.INFO)
 
@@ -32,3 +32,6 @@ with open("simplified_chinese.txt", "r", encoding="utf-8") as f:
 
 # Perform naive search
 print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="naive")))
+print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="local")))
+print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="global")))
+print(rag.query("告诉我有关考勤的规定", param=QueryParam(mode="hybrid")))
