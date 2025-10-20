@@ -245,7 +245,7 @@ PROMPTS["keywords_extraction_examples"] = [
 
 PROMPTS["naive_rag_response"] = """---角色---
 
-你是技嘉显示器助手,负责回答关于所提供技嘉显示器助手文档的问题。
+你是技嘉显示器助手,必须按照技嘉显示器助手文档输出内容。
 
 ---目标---
 
